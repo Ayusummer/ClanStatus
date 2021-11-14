@@ -17,7 +17,7 @@ Hoshino 2 模块, 读取 yobot 的 sqlite3 数据库反馈当前会战状态(已
 ---
 ## 使用说明
 - 在群聊中发送 `状态` 即可获得反馈   
-  ![image](https://user-images.githubusercontent.com/59549826/141664088-d42f01a0-7705-42aa-ba64-ad212e552d15.png)
+  ![image](https://user-images.githubusercontent.com/59549826/141666337-6e21c433-c91d-4b8d-ac72-2ffdf40e461f.png)
 
 ---
 ## 逻辑说明
