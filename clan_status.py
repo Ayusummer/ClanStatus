@@ -8,6 +8,7 @@ from hoshino.typing import CQEvent
 
 sv = Service('会战状态', enable_on_default=True, help_='会战状态')
 
+# 本地 yobot 数据库的路径
 path_db = "/home/ubuntu/Karyl_1/yobot/src/client/yobot_data/yobotdata.db"
 
 
@@ -107,5 +108,5 @@ async def status(session):
         nickname_lst.append(cur.execute(sql_find_nickname, (i,)).fetchone()[1])
 
     msg= "当前已出{0}刀完整刀, 还剩{1}刀完整刀和{2}刀补偿刀 \n \
-            手中还有补偿刀的QQ号为:{3}".format(attacked_full, 90-attacked_half-attacked_full, attacked_half, nickname_lst)
+            手中还有补偿刀的成员为:{3}".format(attacked_full, 90-attacked_half-attacked_full, attacked_half, nickname_lst)
     await session.send(msg)
