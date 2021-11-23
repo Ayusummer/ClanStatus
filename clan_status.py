@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from nonebot import get_bot 
+from nonebot import get_bot
 
 import hoshino
 from hoshino import Service
@@ -72,5 +72,5 @@ async def status(session):
     for i in attacked_half_lst:
         nickname_lst.append(cur.execute(sql_find_nickname, (i,)).fetchone()[1])
 
-    msg= "手中还有补偿刀的成员为:{0}".format(nickname_lst)
+    msg = "手中还有补偿刀的成员为:{0}".format(nickname_lst)
     await session.send(msg)
