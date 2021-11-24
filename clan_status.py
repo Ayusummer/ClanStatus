@@ -72,5 +72,10 @@ async def status(session):
     for i in attacked_half_lst:
         nickname_lst.append(cur.execute(sql_find_nickname, (i,)).fetchone()[1])
 
+    # 关闭 cursor
+    cur.close()
+    # 关闭数据库连接
+    conn.close()
+
     msg = "手中还有补偿刀的成员为:{0}".format(nickname_lst)
     await session.send(msg)
