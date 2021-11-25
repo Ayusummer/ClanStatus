@@ -5,6 +5,7 @@ from nonebot import get_bot
 import hoshino
 from hoshino import Service
 from hoshino.typing import CQEvent
+from hoshino.typing import CommandSession
 
 sv = Service('会战状态', enable_on_default=True, help_='会战状态')
 
@@ -13,7 +14,7 @@ path_db = "/home/ubuntu/Karyl_1/yobot/src/client/yobot_data/yobotdata.db"
 
 
 @sv.on_command('状态')
-async def status(session):
+async def status(session: CommandSession):
     # 获取所在群号
     gid = session.ctx['group_id']
     # 连接 yoboqdata.db
@@ -72,8 +73,6 @@ async def status(session):
     for i in attacked_half_lst:
         nickname_lst.append(cur.execute(sql_find_nickname, (i,)).fetchone()[1])
 
-    # 关闭 cursor
-    cur.close()
     # 关闭数据库连接
     conn.close()
 
